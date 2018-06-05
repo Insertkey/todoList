@@ -1,13 +1,13 @@
 <template>
   <el-row :gutter="20" type="flex" justify="center">
-    <el-col :span="6">
-      <div class="grid-content bg-purple">
-        <el-collapse v-model="activeNames" @change="handleChange">
-          <el-collapse-item title="已完成事项" name="1">
-            <div>{{msg}}</div>
-          </el-collapse-item>
-        </el-collapse>
-      </div>
+    <el-col :span="8">
+      <el-collapse v-model="activeNames" @change="handleChange">
+        <el-collapse-item title="已完成事项" name="1">
+          <ul>
+            <li v-for="(item,index) in getFinishList">{{index+1}} {{item}}</li>
+          </ul>
+        </el-collapse-item>
+      </el-collapse>
     </el-col>
   </el-row>
 </template>
@@ -16,8 +16,12 @@
 export default {
   data(){
     return{
-      msg:'已完成事件列表',
       activeNames: []
+    }
+  },
+  computed:{
+    getFinishList(){
+      return this.$store.state.finishList;
     }
   },
   methods: {
@@ -34,8 +38,6 @@ export default {
 </script>
 
 <style>
-el-collapse{
 
-}
 </style>
 

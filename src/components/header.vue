@@ -6,7 +6,7 @@
 export default {
   data () {
     return {
-      msg: '今日事，今日毕'
+      msg: ''
     }
   }
 }

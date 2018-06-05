@@ -30,7 +30,7 @@ export default {
   methods:{
     addTodoList:function(){
       this.$store.commit('addCount',1);
-      this.$store.commit('updateTodoList',this.addtodo);
+      this.$store.commit('addTodoList',this.addtodo);
       this.addtodo='';
     }
   }
