@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>还有{{count}}件事未完成</h2>
+    <h2>还有{{getCount}}件事未完成</h2>
     <div id="todo">
       <el-input
       placeholder="添加未完成事项"
@@ -9,9 +9,6 @@
       </el-input>
       <el-button type="primary" icon="el-icon-edit" @click="addTodoList">添加</el-button>
     </div>
-    <ol>
-      <li v-for="todo in todolist">{{todo}}</li>
-    </ol>
   </div>
 </template>
 
@@ -19,17 +16,22 @@
 export default {
   data(){
     return{
-      count:0,
-      addtodo:'',
-      todolist:[]
+      addtodo:''
+    }
+  },
+  computed:{
+    getTodoList(){
+      return this.$store.state.todoList
+    },
+    getCount() {
+      return this.$store.state.count
     }
   },
   methods:{
     addTodoList:function(){
-      this.todolist.push(this.addtodo);
-      this.count++;
+      this.$store.commit('addCount',1);
+      this.$store.commit('updateTodoList',this.addtodo);
       this.addtodo='';
-      console.log(this.todolist);
     }
   }
 }
@@ -41,6 +43,6 @@ export default {
   margin: 0 auto;
 }
 .el-input{
-  width: 280px;
+  width: 350px;
 }
 </style>

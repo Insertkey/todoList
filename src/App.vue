@@ -3,6 +3,7 @@
     <appheader></appheader>
     <addtodo></addtodo>
     <todolist></todolist>
+    <finish></finish>
   </div>
 </template>
 
@@ -10,11 +11,13 @@
 import appheader from './components/header.vue'
 import addtodo from './components/addtodo.vue'
 import todolist from './components/todolist.vue'
+import finish from './components/finish.vue'
 export default {
   components:{
     appheader,
     addtodo,
-    todolist
+    todolist,
+    finish
   }
 }
 </script>
