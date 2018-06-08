@@ -1,6 +1,6 @@
 <template>
   <el-row :gutter="20" type="flex" justify="center">
-    <el-col :span="8">
+    <el-col :span="6">
       <el-collapse v-model="activeNames" @change="handleChange">
         <el-collapse-item title="已完成事项" name="1">
           <ul>
@@ -38,6 +38,17 @@ export default {
 </script>
 
 <style>
-
+ul{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+li{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 </style>
 
