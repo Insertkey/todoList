@@ -43,6 +43,6 @@ export default {
   margin: 0 auto;
 }
 .el-input{
-  width: 350px;
+  width: 20%;
 }
 </style>
